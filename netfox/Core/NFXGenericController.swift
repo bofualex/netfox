@@ -12,12 +12,11 @@ import UIKit
 import Cocoa
 #endif
 
-class NFXGenericController: NFXViewController
-{
+class NFXGenericController: NFXViewController {
+    
     var selectedModel: NFXHTTPModel = NFXHTTPModel()
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
     #if os(iOS)
         self.edgesForExtendedLayout = UIRectEdge()
@@ -28,17 +27,14 @@ class NFXGenericController: NFXViewController
     #endif
     }
     
-    func selectedModel(_ model: NFXHTTPModel)
-    {
+    func selectedModel(_ model: NFXHTTPModel) {
         self.selectedModel = model
     }
     
-    func formatNFXString(_ string: String) -> NSAttributedString
-    {
-        var tempMutableString = NSMutableAttributedString()
-        tempMutableString = NSMutableAttributedString(string: string)
+    func formatNFXString(_ string: String) -> NSAttributedString {
+        let tempMutableString = NSMutableAttributedString(string: string)
         
-        let l = string.characters.count
+        let l = string.count
         
         let regexBodyHeaders = try! NSRegularExpression(pattern: "(\\-- Body \\--)|(\\-- Headers \\--)", options: NSRegularExpression.Options.caseInsensitive)
         let matchesBodyHeaders = regexBodyHeaders.matches(in: string, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSMakeRange(0, l)) as Array<NSTextCheckingResult>
@@ -59,7 +55,6 @@ class NFXGenericController: NFXViewController
         return tempMutableString
     }
     
-    @objc func reloadData()
-    {
+    @objc func reloadData() {
     }
 }

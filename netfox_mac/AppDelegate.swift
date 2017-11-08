@@ -12,6 +12,7 @@ import Swifter
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
     @IBOutlet weak var window: NSWindow!
 
     func applicationWillFinishLaunching(_ aNotification: Notification) {
@@ -24,8 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
+        
     }
 }
-
-
-

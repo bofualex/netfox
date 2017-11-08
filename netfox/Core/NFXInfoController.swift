@@ -7,11 +7,25 @@
     
 import Foundation
 
-class NFXInfoController: NFXGenericController
-{
+class NFXInfoController: NFXGenericController {
     
-    func generateInfoString(_ ipAddress: String) -> NSAttributedString
-    {
+    func titleString() -> String {
+        return NFXDebugInfo.getNFXAppName() + " v." + NFXDebugInfo.getNFXAppVersionNumber()
+    }
+    
+    func macInfoString(withIPAddress ipAddress: String) -> NSAttributedString {
+        let result = NSMutableAttributedString()
+        
+        result.boldString("Bundle identifier:\n", withSize: 13)
+        result.normalString(NFXDebugInfo.getNFXBundleIdentifier() + "\n\n")
+        
+        result.boldString("IP address: ", withSize: 13)
+        result.normalString(ipAddress + "\n")
+    
+        return result
+    }
+    
+    func generateInfoString(_ ipAddress: String) -> NSAttributedString {
         var tempString: String
         tempString = String()
         
@@ -20,17 +34,15 @@ class NFXInfoController: NFXGenericController
         tempString += "[App version] \n\(NFXDebugInfo.getNFXAppVersionNumber()) (build \(NFXDebugInfo.getNFXAppBuildNumber()))\n\n"
         
         tempString += "[App bundle identifier] \n\(NFXDebugInfo.getNFXBundleIdentifier())\n\n"
-
+        
         tempString += "[Device OS] \niOS \(NFXDebugInfo.getNFXOSVersion())\n\n"
-
+        
         tempString += "[Device type] \n\(NFXDebugInfo.getNFXDeviceType())\n\n"
-
+        
         tempString += "[Device screen resolution] \n\(NFXDebugInfo.getNFXDeviceScreenResolution())\n\n"
         
         tempString += "[Device IP address] \n\(ipAddress)\n\n"
-
+        
         return formatNFXString(tempString)
     }
-    
-
 }

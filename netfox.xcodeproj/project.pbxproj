@@ -79,6 +79,8 @@
 		B3F8D6841C833B1700F9FBEA /* NFXStatisticsController_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F8D67A1C833B1700F9FBEA /* NFXStatisticsController_OSX.swift */; };
 		C3B0FD99F1A684633A894676 /* Pods_netfox_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88412B0FEC6E00FC9E7BCDD3 /* Pods_netfox_ios.framework */; };
 		D754AA6BB46409F670E8CC9A /* Pods_netfox_mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080FF2CD0DC986CA9C85B89 /* Pods_netfox_mac.framework */; };
+		E25D0A9F1FB34D7B00CA7E0C /* String+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D0A9E1FB34D7B00CA7E0C /* String+Bold.swift */; };
+		E25D0AA01FB34EE500CA7E0C /* String+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D0A9E1FB34D7B00CA7E0C /* String+Bold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,7 @@
 		B40729489A21C5008AD68710 /* Pods-netfox_mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netfox_mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-netfox_mac/Pods-netfox_mac.debug.xcconfig"; sourceTree = "<group>"; };
 		D43B421C0A67AEC706F6DA00 /* Pods-netfox_osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netfox_osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-netfox_osx/Pods-netfox_osx.debug.xcconfig"; sourceTree = "<group>"; };
 		E20FD2E91C6912D400DCFF61 /* netfox_osx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = netfox_osx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25D0A9E1FB34D7B00CA7E0C /* String+Bold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Bold.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,7 @@
 				CEFE42B41C0DDBD8001A56E0 /* netfox */,
 				8229AD631F8FB34300A9D613 /* netfox_ios_demo */,
 				234DBCD41FA33BD90086CB79 /* netfox_mac */,
+				E25D0A9D1FB34D6000CA7E0C /* Helpers */,
 				B3BC02101C09CDA000C17F3A /* Products */,
 				8229AD761F8FB4B500A9D613 /* Frameworks */,
 				4F26BEEC5880CE0F5CE688F7 /* Pods */,
@@ -342,6 +346,14 @@
 				B3F8D6701C833B1700F9FBEA /* OSX */,
 			);
 			path = netfox;
+			sourceTree = "<group>";
+		};
+		E25D0A9D1FB34D6000CA7E0C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E25D0A9E1FB34D7B00CA7E0C /* String+Bold.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +709,7 @@
 				B3F8BA841C833ABC00F9FBEA /* NFXAssets.swift in Sources */,
 				826C4E9F1F979AB3008B440C /* NFXLoader.m in Sources */,
 				B3F8BA8C1C833ABC00F9FBEA /* NFXGenericController.swift in Sources */,
+				E25D0A9F1FB34D7B00CA7E0C /* String+Bold.swift in Sources */,
 				B3F8BA921C833ABC00F9FBEA /* NFXHTTPModelManager.swift in Sources */,
 				B3F8BA881C833ABC00F9FBEA /* NFXDetailsController.swift in Sources */,
 				B3F8BA981C833ABC00F9FBEA /* NFXListController.swift in Sources */,
@@ -736,6 +749,7 @@
 				B3F8BA991C833ABC00F9FBEA /* NFXListController.swift in Sources */,
 				B3F8BA9D1C833ABC00F9FBEA /* NFXRawBodyDetailsController.swift in Sources */,
 				23ABD6D11FA9C53F00CD6186 /* NFXServer.swift in Sources */,
+				E25D0AA01FB34EE500CA7E0C /* String+Bold.swift in Sources */,
 				B3F8D6801C833B1700F9FBEA /* NFXListController_OSX.swift in Sources */,
 				B3F8BA971C833ABC00F9FBEA /* NFXInfoController.swift in Sources */,
 			);
@@ -801,7 +815,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = netfox_mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapptitude.netfox-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -827,7 +841,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = netfox_mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapptitude.netfox-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

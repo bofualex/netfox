@@ -11,17 +11,15 @@ import Cocoa
     
 class NFXInfoController_OSX: NFXInfoController {
     
-    @IBOutlet var textView: NSTextView!
-
-    override func awakeFromNib() {
-        generateInfo()
-    }
+    @IBOutlet weak var titleTextField: NSTextField!
+    @IBOutlet weak var contentTextField: NSTextField!
     
-    func generateInfo()
-    {
-        NFXDebugInfo.getNFXIP { (result) -> Void in
+    override func awakeFromNib() {
+        self.titleTextField.stringValue = self.titleString()
+        
+        NFXDebugInfo.getNFXIP { (ipAddress) -> Void in
             DispatchQueue.main.async {
-                self.textView.textStorage?.setAttributedString(self.generateInfoString(result))
+                self.contentTextField.attributedStringValue = self.macInfoString(withIPAddress: ipAddress)
             }
         }
     }
