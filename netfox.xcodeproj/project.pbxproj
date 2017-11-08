@@ -294,15 +294,15 @@
 				B3F8BA781C833ABC00F9FBEA /* NFXHTTPModel.swift */,
 				B3F8BA791C833ABC00F9FBEA /* NFXHTTPModelManager.swift */,
 				B3F8BA7A1C833ABC00F9FBEA /* NFXImageBodyDetailsController.swift */,
-				B3F8BA7B1C833ABC00F9FBEA /* NFXInfoController.swift */,
 				B3F8BA7C1C833ABC00F9FBEA /* NFXListController.swift */,
 				B3F8BA7D1C833ABC00F9FBEA /* NFXProtocol.swift */,
 				B3F8BA7E1C833ABC00F9FBEA /* NFXRawBodyDetailsController.swift */,
-				B3F8BA7F1C833ABC00F9FBEA /* NFXSettingsController.swift */,
-				B3F8BA801C833ABC00F9FBEA /* NFXStatisticsController.swift */,
-				B3F8BA811C833ABC00F9FBEA /* NFXWindowController.swift */,
 				23ABD6CF1FA9C40000CD6186 /* NFXServer.swift */,
 				23ABD6D51FA9E08C00CD6186 /* NFXNetService.swift */,
+				B3F8BA811C833ABC00F9FBEA /* NFXWindowController.swift */,
+				B3F8BA7B1C833ABC00F9FBEA /* NFXInfoController.swift */,
+				B3F8BA801C833ABC00F9FBEA /* NFXStatisticsController.swift */,
+				B3F8BA7F1C833ABC00F9FBEA /* NFXSettingsController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -326,14 +326,14 @@
 			children = (
 				B3F8D6711C833B1700F9FBEA /* NetfoxWindow.xib */,
 				B3F8D6721C833B1700F9FBEA /* NFXDetailsController_OSX.swift */,
-				B3F8D6731C833B1700F9FBEA /* NFXInfoController_OSX.swift */,
 				B3F8D6741C833B1700F9FBEA /* NFXListCell_OSX.swift */,
 				B3F8D6751C833B1700F9FBEA /* NFXListCell_OSX.xib */,
 				B3F8D6761C833B1700F9FBEA /* NFXListController_OSX.swift */,
 				B3F8D6771C833B1700F9FBEA /* NFXResponseTypeCell_OSX.swift */,
 				B3F8D6781C833B1700F9FBEA /* NFXResponseTypeCell_OSX.xib */,
-				B3F8D6791C833B1700F9FBEA /* NFXSettingsController_OSX.swift */,
+				B3F8D6731C833B1700F9FBEA /* NFXInfoController_OSX.swift */,
 				B3F8D67A1C833B1700F9FBEA /* NFXStatisticsController_OSX.swift */,
+				B3F8D6791C833B1700F9FBEA /* NFXSettingsController_OSX.swift */,
 			);
 			path = OSX;
 			sourceTree = "<group>";

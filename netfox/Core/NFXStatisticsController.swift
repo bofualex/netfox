@@ -27,8 +27,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class NFXStatisticsController: NFXGenericController
-{
+class NFXStatisticsController: NFXGenericController {
     var totalModels: Int = 0
 
     var successfulRequests: Int = 0
@@ -42,8 +41,62 @@ class NFXStatisticsController: NFXGenericController
     var fastestResponseTime: Float = 999
     var slowestResponseTime: Float = 0
     
-    func getReportString() -> NSAttributedString
-    {
+    func macReportString() -> NSAttributedString {
+        let result = NSMutableAttributedString()
+    
+        result.boldString("Total requests: ", withSize: 13)
+        result.normalString("\(self.totalModels)\n\n")
+        
+        result.boldString("Successful requests: ", withSize: 13)
+        result.normalString("\(self.successfulRequests)\n\n")
+        
+        result.boldString("Failed requests: ", withSize: 13)
+        result.normalString("\(self.failedRequests)\n\n")
+        
+        result.boldString("Total request size: ", withSize: 13)
+        result.normalString("\(Float(self.totalRequestSize/1024)) KB\n\n")
+        
+        if self.totalModels == 0 {
+            result.boldString("Avg request size: ", withSize: 13)
+            result.normalString("0.0 KB\n\n")
+        } else {
+            result.boldString("Avg request size: ", withSize: 13)
+            result.normalString("\(Float((self.totalRequestSize/self.totalModels)/1024)) KB\n\n")
+        }
+        
+        result.boldString("Total response size: ", withSize: 13)
+        result.normalString("\(Float(self.totalResponseSize/1024)) KB\n\n")
+        
+        if self.totalModels == 0 {
+            result.boldString("Avg response size: ", withSize: 13)
+            result.normalString("0.0 KB\n\n")
+        } else {
+            result.boldString("Avg response size: ", withSize: 13)
+            result.normalString("\(Float((self.totalResponseSize/self.totalModels)/1024)) KB\n\n")
+        }
+        
+        if self.totalModels == 0 {
+            result.boldString("Avg response time: ", withSize: 13)
+            result.normalString("0.0s\n\n")
+        } else {
+            result.boldString("Avg response time: ", withSize: 13)
+            result.normalString("\(Float(self.totalResponseTime/Float(self.totalModels)))s\n\n")
+
+            if self.fastestResponseTime == 999 {
+                result.boldString("Fastest response time: ", withSize: 13)
+                result.normalString("0.0s\n\n")
+            } else {
+                result.boldString("Fastest response time: ", withSize: 13)
+                result.normalString("\(self.fastestResponseTime)s\n\n")
+            }
+        }
+        result.boldString("Slowest response time: ", withSize: 13)
+        result.normalString("\(self.slowestResponseTime)s\n\n")
+        
+        return result
+    }
+    
+    func getReportString() -> NSAttributedString {
         var tempString: String
         tempString = String()
         
@@ -82,8 +135,7 @@ class NFXStatisticsController: NFXGenericController
         return formatNFXString(tempString)
     }
     
-    func generateStatics()
-    {
+    func generateStatics() {
         let models = NFXHTTPModelManager.sharedInstance.getModels()
         totalModels = models.count
         
@@ -118,8 +170,7 @@ class NFXStatisticsController: NFXGenericController
         }
     }
     
-    func clearStatistics()
-    {
+    func clearStatistics() {
         self.totalModels = 0
         self.successfulRequests = 0
         self.failedRequests = 0
@@ -130,8 +181,7 @@ class NFXStatisticsController: NFXGenericController
         self.slowestResponseTime = 0
     }
     
-    override func reloadData()
-    {
+    override func reloadData() {
         clearStatistics()
         generateStatics()
     }

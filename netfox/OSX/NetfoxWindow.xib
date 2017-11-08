@@ -505,7 +505,7 @@
                     <rect key="frame" x="0.0" y="108" width="247" height="144"/>
                     <clipView key="contentView" id="dZI-AB-6Mb">
                         <rect key="frame" x="1" y="0.0" width="245" height="143"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="lve-EN-zin" viewBased="YES" id="Ulh-Eo-vFb">
                                 <rect key="frame" x="0.0" y="0.0" width="245" height="120"/>
@@ -632,7 +632,7 @@
                 <constraint firstAttribute="trailing" secondItem="4FJ-AJ-ZZu" secondAttribute="trailing" constant="20" id="sve-EO-CwZ"/>
                 <constraint firstAttribute="trailing" secondItem="XMU-yV-S1C" secondAttribute="trailing" constant="20" id="waS-NV-gUn"/>
             </constraints>
-            <point key="canvasLocation" x="130.5" y="-106.5"/>
+            <point key="canvasLocation" x="887" y="-94"/>
         </customView>
         <viewController id="CXf-9K-qWP" userLabel="Popover Info View Controller" customClass="NFXInfoController_OSX" customModule="netfox_osx" customModuleProvider="target">
             <connections>
@@ -651,7 +651,7 @@
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pCf-fP-gAY">
                     <rect key="frame" x="18" y="57" width="254" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Info" id="RKO-hy-VZi">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="netfox" id="RKO-hy-VZi">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" red="0.8980392157" green="0.39607843139999999" blue="0.058823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -678,62 +678,40 @@
             <point key="canvasLocation" x="553" y="-205.5"/>
         </customView>
         <customView id="o2t-Bo-0qK" userLabel="View - Statistics">
-            <rect key="frame" x="0.0" y="0.0" width="290" height="315"/>
+            <rect key="frame" x="0.0" y="0.0" width="290" height="94"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oSX-MK-Tts">
-                    <rect key="frame" x="18" y="278" width="254" height="17"/>
+                    <rect key="frame" x="18" y="57" width="254" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Statistics" id="WBR-K3-Idq">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unB-kv-F42">
-                    <rect key="frame" x="20" y="20" width="250" height="250"/>
-                    <clipView key="contentView" id="KhA-eS-wlq">
-                        <rect key="frame" x="1" y="1" width="233" height="248"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="x6g-1e-icD" userLabel="Text View - Statistics">
-                                <rect key="frame" x="0.0" y="0.0" width="233" height="248"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="233" height="248"/>
-                                <size key="maxSize" width="463" height="10000000"/>
-                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </clipView>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="250" id="QkS-pD-nsl"/>
-                        <constraint firstAttribute="height" constant="250" id="VVg-Q3-hYa"/>
-                    </constraints>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="fTo-XG-tQx">
-                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1oO-uN-Zik">
-                        <rect key="frame" x="233" y="1" width="16" height="248"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                </scrollView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-x5-qwK">
+                    <rect key="frame" x="18" y="20" width="254" height="17"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="Xoc-rY-lCe">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wfa-x5-qwK" secondAttribute="trailing" constant="20" symbolic="YES" id="35b-la-efd"/>
                 <constraint firstItem="oSX-MK-Tts" firstAttribute="leading" secondItem="o2t-Bo-0qK" secondAttribute="leading" constant="20" symbolic="YES" id="5bh-BC-WaD"/>
                 <constraint firstAttribute="trailing" secondItem="oSX-MK-Tts" secondAttribute="trailing" constant="20" symbolic="YES" id="6h9-j0-Bsw"/>
-                <constraint firstItem="unB-kv-F42" firstAttribute="leading" secondItem="o2t-Bo-0qK" secondAttribute="leading" constant="20" symbolic="YES" id="CeV-Px-FWg"/>
-                <constraint firstAttribute="bottom" secondItem="unB-kv-F42" secondAttribute="bottom" constant="20" symbolic="YES" id="DiZ-Y2-1vY"/>
-                <constraint firstAttribute="trailing" secondItem="unB-kv-F42" secondAttribute="trailing" constant="20" symbolic="YES" id="RIk-cv-cj0"/>
-                <constraint firstItem="unB-kv-F42" firstAttribute="top" secondItem="oSX-MK-Tts" secondAttribute="bottom" constant="8" symbolic="YES" id="cWd-DS-Ojy"/>
+                <constraint firstItem="Wfa-x5-qwK" firstAttribute="leading" secondItem="o2t-Bo-0qK" secondAttribute="leading" constant="20" symbolic="YES" id="8zo-js-4mm"/>
+                <constraint firstItem="Wfa-x5-qwK" firstAttribute="top" secondItem="oSX-MK-Tts" secondAttribute="bottom" constant="20" id="LjO-6b-voz"/>
                 <constraint firstItem="oSX-MK-Tts" firstAttribute="top" secondItem="o2t-Bo-0qK" secondAttribute="top" constant="20" symbolic="YES" id="dBr-cJ-Oo7"/>
+                <constraint firstAttribute="bottom" secondItem="Wfa-x5-qwK" secondAttribute="bottom" constant="20" symbolic="YES" id="o00-9U-xAE"/>
             </constraints>
-            <point key="canvasLocation" x="807" y="-106.5"/>
+            <point key="canvasLocation" x="215" y="-206"/>
         </customView>
         <viewController id="DZ0-EN-1Ob" userLabel="Popover Statistics View Controller" customClass="NFXStatisticsController_OSX" customModule="netfox_osx" customModuleProvider="target">
             <connections>
-                <outlet property="textView" destination="x6g-1e-icD" id="WQy-Ki-qmU"/>
+                <outlet property="statisticsTextField" destination="Wfa-x5-qwK" id="O4f-ch-COZ"/>
             </connections>
         </viewController>
         <popover behavior="t" id="qC0-2M-a94" userLabel="Popover - Statistics">
