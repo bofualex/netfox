@@ -172,7 +172,7 @@ extension NFX {
         }
         
         if let jsonModels = json as? [[String: Any]] {
-            let models: [NFXHTTPModel] = jsonModels.compactMap({
+            let models: [NFXHTTPModel] = jsonModels.flatMap({
                 let model = NFXHTTPModel()
                 model.fromJSON(json: $0)
                 return model
