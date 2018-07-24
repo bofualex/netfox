@@ -7,7 +7,7 @@
 //
 
 #import "NSURLSessionConfiguration+NFX.h"
-#import <netfox_ios/netfox_ios-Swift.h>
+#import <netfox/netfox-Swift.h>
 
 @implementation NSURLSessionConfiguration (NFX)
 
