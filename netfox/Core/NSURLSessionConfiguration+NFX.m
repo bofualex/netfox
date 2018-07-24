@@ -12,11 +12,7 @@
 @implementation NSURLSessionConfiguration (NFX)
 
 + (void)load {
-    
-#if DEBUG
     [[NFX sharedInstance] start];
-#endif
-    
 }
 
 @end
