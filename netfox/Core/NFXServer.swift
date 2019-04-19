@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class NFXServer: NSObject {
     public struct Options {
@@ -22,7 +23,7 @@ public class NFXServer: NSObject {
     public func startServer() {
         publishHttpService()
         #if os(iOS)
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         #endif
     }
     
@@ -73,7 +74,7 @@ extension NFXServer: NetServiceDelegate {
         client.prepareForWritingStream()
         client.writeAllModels()
         client.onClose = { [unowned self] in
-            if let index = self.connectedClients.index(of: client) {
+            if let index = self.connectedClients.firstIndex(of: client) {
                 self.connectedClients.remove(at: index)
             }
         }

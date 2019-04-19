@@ -275,7 +275,7 @@ extension NFX {
         #if !swift(>=4.0)
             navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.NFXOrangeColor()]
         #else
-            navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.NFXOrangeColor()]
+            navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.NFXOrangeColor()]
         #endif
         
         presentingViewController?.present(navigationController!, animated: true, completion: nil)

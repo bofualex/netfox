@@ -49,8 +49,8 @@ class NFXClientConnection: NSObject {
     }
     
     @objc func scheduleOnRunLoop() {
-        inputStream.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
-        outputStream.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
+        inputStream.schedule(in: RunLoop.current, forMode: .default)
+        outputStream.schedule(in: RunLoop.current, forMode: .default)
         inputStream.open()
         outputStream.open()
     }
@@ -172,7 +172,7 @@ extension NFX {
         }
         
         if let jsonModels = json as? [[String: Any]] {
-            let models: [NFXHTTPModel] = jsonModels.flatMap({
+            let models: [NFXHTTPModel] = jsonModels.compactMap({
                 let model = NFXHTTPModel()
                 model.fromJSON(json: $0)
                 return model
